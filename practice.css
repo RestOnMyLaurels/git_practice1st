@@ -5,13 +5,19 @@
 
 body {
   margin: 0;
-  font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #ffffff;
   color: #222;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 16px;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 8px;
 }
 
 .chart-card {
@@ -22,14 +28,11 @@ body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.dummy-chart {
+/* 차트 캔버스가 부모 높이에 맞도록 래퍼 사용 */
+.chart-wrap {
   margin-top: 10px;
-  height: 160px;
-  border-radius: 999px;
-  border: 8px solid #464646;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #999;
+  height: 220px;       /* 필요하면 180~260 사이로 조절 */
+  position: relative;  /* Chart.js가 absolute로 캔버스 배치 */
+  border-radius: 12px;
+  background: #f6f6f6; /* 연한 배경 (연습용 가이드) */
 }
